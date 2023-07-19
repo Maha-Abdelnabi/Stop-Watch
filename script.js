@@ -3,10 +3,19 @@ const startButtonEl = document.getElementById("start");
 const stopButtonEl = document.getElementById("stop");
 const resetButtonEl = document.getElementById("reset");
 
+let startTime = 0;
+let elapsedTime = 0;
+let timerInterval;//to claculate these times using setInterval
+
 
 //start timer function
 function startTimer(){
-    console.log("start")
+    startTime = Date.now() ;
+    timerInterval = setInterval(()=>{
+       elapsedTime = Date.now() - startTime;
+       //update the timer
+       timerEl.textContent = elapsedTime;
+    },10)
 }
 
 //stop timer function
