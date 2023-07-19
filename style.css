@@ -1,0 +1,74 @@
+body {
+
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  background-image: url(./assets/stopwatch_PNG69.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: auto;
+  
+}
+.container{
+    max-width: 80%;
+   background-color: black;
+   opacity: 0.7;
+  border-radius: 18px;
+
+    
+}
+#timer {
+  font-size: 7rem;
+  font-weight: 700;
+  text-shadow: 2px 2px #c52e63;
+  color: #dfd1d6;
+  width: 600px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  
+}
+
+button {
+  background-color: #d8d7d8;
+  color: rgb(34, 33, 33);
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.2rem 3rem;
+  margin: 1rem;
+  border-radius: 30px;
+  cursor: pointer;;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #f44583;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  border: 2px #c52e63 solid;
+  cursor: default;
+}
+
+@media (max-width: 800px) {
+  #timer {
+    font-size: 4rem;
+    width: 350px;
+  }
+
+  button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+}
