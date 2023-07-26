@@ -10,12 +10,16 @@ let timerInterval;//to claculate these times using setInterval
 
 //start timer function
 function startTimer(){
-    startTime = Date.now() ;
+    startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(()=>{
        elapsedTime = Date.now() - startTime;
        //update the timer
        timerEl.textContent = formatTime(elapsedTime);
-    },10)
+    },10);
+
+    //disable the start button   
+    startButtonEl.disabled = true;
+    stopButtonEl.disabled = false;
 }
 
 function formatTime(elapsedTime){
@@ -36,12 +40,20 @@ function formatTime(elapsedTime){
 }
 //stop timer function
 function stopTimer(){
-    console.log("stop")
+     clearInterval(timerInterval);
+     startButtonEl.disabled = false;
+     stopButtonEl.disabled = true;
 }
 
 //reset timer function
 function resetTimer() {
-    console.log("reset")
+     clearInterval(timerInterval);
+
+     elapsedTime = 0;
+     timerEl.textContent = "00:00:00";
+
+     startButtonEl.disabled = false;
+     stopButtonEl.disabled = true; 
 }
 
 startButtonEl.addEventListener("click", startTimer);
